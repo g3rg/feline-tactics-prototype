@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 
 import {useState} from 'react';
 
-import {StartMenu, BattleMode} from 'components';
+import {StartMenu, BattleMode, EndGame} from 'components';
 
 export const App = () => {
     const [mode, setMode] = useState('start');
@@ -18,7 +18,7 @@ export const App = () => {
             )}
 
             {mode === 'endgame' && (
-                <>Game Over!</>
+                <EndGame onRestart={() => setMode('start')}/>
             )}
 
         </div>
