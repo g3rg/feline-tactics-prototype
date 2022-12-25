@@ -23,5 +23,6 @@ export const PlayerSummary = ({
         <div className={styles.health}>
             <Bar label="HP" value={health} maxValue={maxHealth}/>
         </div>
+
     </div>
 );
