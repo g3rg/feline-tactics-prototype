@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-.user,
-.opponent {
+.playerOne,
+.playerTwo {
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     justify-content: flex-start;
 }
 
-.opponent .summary {
+.playerTwo .summary {
     align-items: flex-start;
     justify-content: flex-end;
 }
@@ -63,12 +63,12 @@
     transition: 0.5s;
 }
 
-.playerSprite .attack {
+.playerOneSprite .attack {
     transition: 0.1s;
     transform: translateX(100px);
 }
 
-.opponentSprite .attack {
+.playerTwoSprite .attack {
     transition: 0.1s;
     transform: translateX(-100px);
 }
