@@ -1,18 +1,19 @@
-[ ] New characters
 
 [ ] Power bar for special
 [ ] Replace magic with Special Attack, uses / needs Power
+[ ] shrink text a bit
 
-
-[ ] Character images - 4?
-[ ] Cat images - 4
+[ ] Cat images
 [ ] Character selection
 [ ] Cat selection
 [ ] Different cat powers
-[ ] Fit screen nicely on mobile
 
 [ ] Multiplayer?
 
+[ ] Faces/movements/animations?
+
 -- Completed
-[ ] Complete tutorial - https://www.youtube.com/watch?v=r7Z7R25spkE
+[x] Complete tutorial - https://www.youtube.com/watch?v=r7Z7R25spkE
 [x] Player 1 & Player 2 instead of player vs opponent
+[x] New characters
+[x] Basic Character images

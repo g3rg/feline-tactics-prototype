@@ -29,6 +29,12 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+@media (max-width: 600px) {
+    .gameHeader {
+        display: none;
+    }
+}
+
 .summary {
     display: flex;
     align-items: flex-end;
