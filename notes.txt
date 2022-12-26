@@ -1,0 +1,45 @@
+End Goal:
+Arena combat, singplayer vs AI, or multplayer PvP (Coop mode?), Grid based arena
+List building of force
+Multiple factions? Or just pick and choose classes / equipment?
+Up to 5 or so units per force?
+
+MVP:
+Single Unit 1v1 Turn based FF / Pokemon style game
+
+Unit action options:
+Attack
+Heal / Combat Stim?
+Defend - builds up power
+Special
+
+
+Game Name elements / ideas:
+Arena
+Tactics
+Battle
+Combat
+Gladiators
+
+
+Game states:
+Start - Single Player, or Multiplayer
+List Selection
+Battle Mode
+Battle Result
+
+
+Battle States:
+	* Decide initiative
+	*
+
+Unit attributes:
+Initiative?
+Health
+Attack
+Damage
+Defense
+Profile picture
+Picture
+Attack animation?
+Special Animation?
