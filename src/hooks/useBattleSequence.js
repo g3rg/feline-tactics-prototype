@@ -11,8 +11,9 @@ export const useBattleSequence = (sequence, player1, player2) => {
     const [inSequence, setInSequence] = useState(false);
 
     const [playerOneHealth, setPlayerOneHealth] = useState(player1.maxHealth);
+    const [playerOnePower, setPlayerOnePower] = useState(0)
     const [playerTwoHealth, setPlayerTwoHealth] = useState(player2.maxHealth);
-
+    const [playerTwoPower, setPlayerTwoPower] = useState(0)
     const [announcerMessage, setAnnouncerMessage] = useState('');
 
     const [playerOneAnimation, setPlayerOneAnimation] = useState('static');
@@ -50,6 +51,10 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         await wait(750);
 
                         turn === 0
+                            ? setPlayerOnePower(playerOnePower + 10)
+                            : setPlayerTwoPower(playerTwoPower + 10)
+
+                        turn === 0
                             ? setPlayerTwoAnimation('static')
                             : setPlayerOneAnimation('static');
                         setAnnouncerMessage(`${receiver.name} felt that!`);
@@ -57,6 +62,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
                             : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
                         await wait(2000);
+
 
                         setAnnouncerMessage(`Now it's ${receiver.name} turn!`);
                         await wait(1500);
@@ -164,8 +170,10 @@ export const useBattleSequence = (sequence, player1, player2) => {
         turn,
         inSequence,
         playerOneHealth,
+        playerOnePower,
         playerTwoHealth,
         playerOneAnimation,
+        playerTwoPower,
         playerTwoAnimation,
         announcerMessage,
     };

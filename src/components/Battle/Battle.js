@@ -11,7 +11,9 @@ export const Battle = ({onGameEnd, player1, player2}) => {
         turn,
         inSequence,
         playerOneHealth,
+        playerOnePower,
         playerTwoHealth,
+        playerTwoPower,
         playerOneAnimation,
         playerTwoAnimation,
         announcerMessage,
@@ -41,9 +43,11 @@ export const Battle = ({onGameEnd, player1, player2}) => {
                     <PlayerSummary
                         main={false}
                         health={playerTwoHealth}
+                        maxHealth={player2.maxHealth}
+                        power={playerTwoPower}
+                        maxPower={player2.maxPower}
                         name={player2.name}
                         level={player2.level}
-                        maxHealth={player2.maxHealth}
                     />
                 </div>
             </div>
@@ -75,20 +79,25 @@ export const Battle = ({onGameEnd, player1, player2}) => {
                     <PlayerSummary
                         main={true}
                         health={playerOneHealth}
+                        maxHealth={player1.maxHealth}
+                        power={playerOnePower}
+                        maxPower={player1.maxPower}
                         name={player1.name}
                         level={player1.level}
-                        maxHealth={player1.maxHealth}
+
                     />
                 </div>
 
                 <div className={styles.hud}>
-                    <div className={styles.hudChild}>
-                        <BattleAnnouncer
-                            message={
-                                announcerMessage || `What will ${player1.name} do?`
-                            }
-                        />
-                    </div>
+                    {inSequence && (
+                        <div className={styles.hudChild}>
+                            <BattleAnnouncer
+                                message={
+                                    announcerMessage || `What will ${player1.name} do?`
+                                }
+                            />
+                        </div>
+                    )}
                     {!inSequence && turn === 0 && (
                         <div className={styles.hudChild}>
                             <BattleMenu
