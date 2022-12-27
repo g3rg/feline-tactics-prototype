@@ -1,9 +1,9 @@
-[ ] Attack - does attack + builds power
-[ ] Defend - Double defence for next round + builds power
-[ ] Special Attack - Double attack, uses up power (have distinct specials in the future, change button label to be name of special)
-[ ] Heal - uses an amount of power
+[x] Attack - does attack + builds power
+[x] Special Attack - Does more damage
+[ ] Defend - Double defence for next round + builds more power?
 
-
+[ ] Special attack - needs to be full power + uses it all
+[ ] Heal - uses up to half of max power, heals for that amount. can always be used if you have any power...
 
 
 
@@ -16,6 +16,7 @@
 [ ] Character selection
 [ ] Cat selection
 [ ] Different cat powers
+[ ] have distinct specials in the future, change button label to be name of special
 
 [ ] Multiplayer?
 

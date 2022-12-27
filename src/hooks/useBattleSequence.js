@@ -1,6 +1,6 @@
 import {
     wait,
-    magic,
+    special,
     heal,
     attack,
 } from 'shared';
@@ -74,49 +74,6 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     break;
                 }
 
-                case 'magic': {
-                    const damage = magic({attacker, receiver});
-
-                    (async () => {
-                        setInSequence(true);
-                        setAnnouncerMessage(`${attacker.name} has cast a spell!`);
-                        await wait(1000);
-
-                        turn === 0
-                            ? setPlayerOneAnimation('magic')
-                            : setPlayerTwoAnimation('magic');
-                        await wait(1000);
-
-                        turn === 0
-                            ? setPlayerOneAnimation('static')
-                            : setPlayerTwoAnimation('static');
-                        await wait(500);
-
-                        turn === 0
-                            ? setPlayerTwoAnimation('damage')
-                            : setPlayerOneAnimation('damage');
-                        await wait(750);
-
-                        turn === 0
-                            ? setPlayerTwoAnimation('static')
-                            : setPlayerOneAnimation('static');
-                        setAnnouncerMessage(
-                            `${receiver.name} doesn't know what hit them!`,
-                        );
-                        turn === 0
-                            ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
-                            : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
-                        await wait(2500);
-
-                        setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
-                        await wait(1500);
-
-                        setTurn(turn === 0 ? 1 : 0);
-                        setInSequence(false);
-                    })();
-
-                    break;
-                }
 
                 case 'heal': {
                     const recovered = heal({receiver: attacker});
@@ -148,6 +105,50 @@ export const useBattleSequence = (sequence, player1, player2) => {
                                     ? h + recovered
                                     : attacker.maxHealth,
                             ); // We don't want to set HP more than the max
+                        await wait(2500);
+
+                        setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
+                        await wait(1500);
+
+                        setTurn(turn === 0 ? 1 : 0);
+                        setInSequence(false);
+                    })();
+
+                    break;
+                }
+
+                case 'special': {
+                    const damage = special({attacker, receiver});
+
+                    (async () => {
+                        setInSequence(true);
+                        setAnnouncerMessage(`${attacker.name} has used their special attack!`);
+                        await wait(1000);
+
+                        turn === 0
+                            ? setPlayerOneAnimation('special')
+                            : setPlayerTwoAnimation('special');
+                        await wait(1000);
+
+                        turn === 0
+                            ? setPlayerOneAnimation('static')
+                            : setPlayerTwoAnimation('static');
+                        await wait(500);
+
+                        turn === 0
+                            ? setPlayerTwoAnimation('damage')
+                            : setPlayerOneAnimation('damage');
+                        await wait(750);
+
+                        turn === 0
+                            ? setPlayerTwoAnimation('static')
+                            : setPlayerOneAnimation('static');
+                        setAnnouncerMessage(
+                            `${receiver.name} doesn't know what hit them!`,
+                        );
+                        turn === 0
+                            ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
+                            : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
                         await wait(2500);
 
                         setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
