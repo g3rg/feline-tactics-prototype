@@ -1,7 +1,16 @@
+[ ] Attack - does attack + builds power
+[ ] Defend - Double defence for next round + builds power
+[ ] Special Attack - Double attack, uses up power (have distinct specials in the future, change button label to be name of special)
+[ ] Heal - uses an amount of power
 
-[ ] Power bar for special
+
+
+
+
+
+[ ] show announcer always on bigger screens
 [ ] Replace magic with Special Attack, uses / needs Power
-[ ] shrink text a bit
+
 
 [ ] Cat images
 [ ] Character selection
@@ -17,3 +26,4 @@
 [x] Player 1 & Player 2 instead of player vs opponent
 [x] New characters
 [x] Basic Character images
+[x] Power bar for special
