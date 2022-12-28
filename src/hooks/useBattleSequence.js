@@ -1,5 +1,6 @@
 import {
     wait,
+    limitToMax,
     special,
     heal,
     attack,
@@ -57,8 +58,8 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         await wait(750);
 
                         turn === 0
-                            ? setPlayerOnePower(playerOnePower + 10)
-                            : setPlayerTwoPower(playerTwoPower + 10)
+                            ? setPlayerOnePower(limitToMax(playerOnePower + 10, player1.maxPower))
+                            : setPlayerTwoPower(limitToMax(playerTwoPower + 10, player2.maxPower));
 
                         turn === 0
                             ? setPlayerTwoDefenseBonus(1)
@@ -118,8 +119,8 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             : setPlayerTwoDefenseBonus(2)
 
                         turn === 0
-                            ? setPlayerOnePower(playerOnePower + 25)
-                            : setPlayerTwoPower(playerTwoPower + 25)
+                            ? setPlayerOnePower(limitToMax(playerOnePower + 25, player1.maxPower))
+                            : setPlayerTwoPower(limitToMax(playerTwoPower + 25, player2.maxPower))
 
                         await wait(2500);
 

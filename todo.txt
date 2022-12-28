@@ -16,6 +16,8 @@
 [ ] More characters
 
 [ ] UI Improvements
+    [ ] Start Page - name / info
+    [ ] End Menu - Play Again + Home button
     [ ] Faces/movements/animations?
     [ ] Improve effects etc
     [ ] show announcer always on bigger screens
@@ -53,3 +55,5 @@ V3: Multiplayer!
 [x] Tweak healing amount + power usage
 
 [x] change announcer wording when attacking /special a defending player
+[x] Limit HP + POW to max values
+

@@ -5,6 +5,15 @@ export const wait = ms =>
         }, ms);
     });
 
+
+export const limitToMax = (value, maxValue) => {
+    if (value > maxValue) {
+        console.log('Limiting...')
+        return maxValue;
+    }
+    return value;
+}
+
 export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
     const receivedDamage =
         attacker.attack - (attacker.level - receiver.level) * 1.25;
