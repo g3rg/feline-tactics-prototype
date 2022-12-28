@@ -6,6 +6,7 @@ import {characters} from "shared";
 export const App = () => {
     const [winner, setWinner] = useState();
     const [mode, setMode] = useState('start');
+    const [selectedChar, setSelectedChar] = useState()
 
     useEffect(() => {
         if (mode === 'battle') {
@@ -20,7 +21,10 @@ export const App = () => {
             )}
 
             {mode === 'characterSelect' && (
-                <CharacterSelect onClick={() => setMode('battle')}/>
+                <CharacterSelect onClick={(selectedChar) => {
+                    setSelectedChar(selectedChar);
+                    setMode('battle')
+                }}/>
             )}
 
             {mode === 'battle' && (
@@ -29,7 +33,7 @@ export const App = () => {
                         setWinner(winner);
                         setMode('gameOver');
                     }}
-                    player1={characters.Bobinia}
+                    player1={characters[selectedChar]}
                     player2={characters.Charlie}
                 />
             )}

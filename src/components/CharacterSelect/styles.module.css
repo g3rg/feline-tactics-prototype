@@ -1,8 +1,34 @@
 .main {
     height: 100vh;
     display: flex;
-    align-items: center;
+    horiz-align: center;
 }
+
+.gameHeader {
+    font-size: 30px;
+    text-align: center;
+    color: #fdac00;
+    text-shadow: 0px 0px 5px #7f0000;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.characterSelection {
+    column-count: 3;
+    column-gap: 30px;
+}
+
+.prevCharacter {
+    column-span: 1;
+}
+
+.nextCharacter {
+    column-span: 1;
+}
+
+.characterView {
+    column-span: 3;
+}
+
 
 .startButton {
     border: none;
