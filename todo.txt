@@ -4,22 +4,25 @@
 [ ] change announcer wording when attacking /special a defending player
 
 [ ] show announcer always on bigger screens
-[ ] Replace magic with Special Attack, uses / needs Power
 
 [ ] Character selection
     [ ] Img
     [ ] Name
     [ ] Bar graphs for stats...
 
+[ ] AI selects from remaining characters
+[ ] Faces/movements/animations?
+[ ] Improve effects etc
+
+V2: Cats!
 [ ] Cat images
 [ ] Cat selection
 [ ] Different cat powers
-[ ] have distinct specials in the future, change button label to be name of special
+[ ] have distinct specials, change button label to be name of special
 [ ] distinct effects for specials and defending
-[ ] Multiplayer?
 
-[ ] Faces/movements/animations?
-[ ] Improve effects etc
+V3: Multiplayer!
+[ ] Multiplayer?
 
 -- Completed
 [x] Complete tutorial - https://www.youtube.com/watch?v=r7Z7R25spkE
