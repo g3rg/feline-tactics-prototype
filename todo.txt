@@ -1,9 +1,9 @@
+[ ] Disable special if power not full
+[ ] disable heal if no power
 [ ] Special attack - needs to be full power + uses it all
 [ ] Heal - uses up to half of max power, heals for that amount. can always be used if you have any power...
 
 [ ] change announcer wording when attacking /special a defending player
-
-[ ] show announcer always on bigger screens
 
 [ ] Character selection
     [ ] Img
@@ -13,6 +13,7 @@
 [ ] AI selects from remaining characters
 [ ] Faces/movements/animations?
 [ ] Improve effects etc
+[ ] show announcer always on bigger screens
 
 V2: Cats!
 [ ] Cat images
