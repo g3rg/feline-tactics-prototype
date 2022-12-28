@@ -35,7 +35,7 @@ export const App = () => {
             )}
 
             {mode === 'gameOver' && !!winner && (
-                <EndMenu winner={winner} onStartClick={() => setMode('battle')}/>
+                <EndMenu winner={winner} onStartClick={() => setMode('characterSelect')}/>
             )}
         </div>
     );
