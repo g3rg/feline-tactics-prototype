@@ -24,9 +24,10 @@ export const magic = ({attacker, receiver}) => {
 export const heal = ({receiver, receiverPower}) => {
     if (receiverPower > 0) {
         // Use up to half power to heal
-        return receiver.magic + receiver.level * 0.25;
+        const healing = receiver.magic + receiver.level * 0.25;
+        return [healing, 25];
     } else {
-        return 0
+        return [0, 0]
     }
 };
 

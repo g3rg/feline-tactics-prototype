@@ -127,7 +127,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
 
                 case 'heal': {
                     const receiverPower = turn === 0 ? playerOnePower : playerTwoPower;
-                    const recovered = heal({receiver: attacker, receiverPower});
+                    const [recovered, powerUsed] = heal({receiver: attacker, receiverPower});
 
                     if (recovered > 0) {
                         (async () => {
@@ -146,6 +146,10 @@ export const useBattleSequence = (sequence, player1, player2) => {
                                 ? setPlayerOneAnimation(origAnimation)
                                 : setPlayerTwoAnimation(origAnimation);
                             await wait(500);
+
+                            turn === 0
+                                ? setPlayerOnePower(playerOnePower - powerUsed)
+                                : setPlayerTwoPower(playerTwoPower - powerUsed)
 
                             setAnnouncerMessage(`${attacker.name} has recovered health.`);
                             turn === 0
@@ -222,7 +226,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             turn === 0
                                 ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
                                 : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
-                            
+
                             turn === 0
                                 ? setPlayerOnePower(0)
                                 : setPlayerTwoPower(0)
