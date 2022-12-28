@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 import {useEffect, useState} from 'react';
-import {Battle, EndMenu, StartMenu} from 'components';
+import {Battle, CharacterSelect, EndMenu, StartMenu} from 'components';
 import {characters} from "shared";
 
 export const App = () => {
@@ -16,7 +16,11 @@ export const App = () => {
     return (
         <div className={styles.main}>
             {mode === 'start' && (
-                <StartMenu onStartClick={() => setMode('battle')}/>
+                <StartMenu onStartClick={() => setMode('characterSelect')}/>
+            )}
+
+            {mode === 'characterSelect' && (
+                <CharacterSelect onClick={() => setMode('battle')}/>
             )}
 
             {mode === 'battle' && (
