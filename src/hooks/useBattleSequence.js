@@ -222,6 +222,11 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             turn === 0
                                 ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
                                 : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
+                            
+                            turn === 0
+                                ? setPlayerOnePower(0)
+                                : setPlayerTwoPower(0)
+
                             await wait(2500);
 
                             setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);

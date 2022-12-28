@@ -1,6 +1,6 @@
-[ ] Disable special if power not full
-[ ] disable heal if no power
-[ ] Special attack uses all power bar
+[x] Disable special if power not full
+[x] disable heal if no power
+[x] Special attack uses all power bar
 [ ] Heal - uses up to half of max power, heals for that amount. can always be used if you have any power...
 
 [ ] change announcer wording when attacking /special a defending player
