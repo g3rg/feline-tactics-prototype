@@ -85,12 +85,17 @@
     animation: shake 0.5s infinite;
 }
 
+.defend {
+    transition: 0.2s;
+    transform: translateY(25px);
+    animation: shake 0.5s infinite;
+}
+
 .special {
     transition: 0.2s;
     transform: translateY(-25px);
     animation: shake 0.5s infinite;
 }
-
 
 .damage {
     opacity: 1;

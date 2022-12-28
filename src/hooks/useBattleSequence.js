@@ -3,6 +3,7 @@ import {
     special,
     heal,
     attack,
+    defend
 } from 'shared';
 import {useEffect, useState} from 'react';
 
@@ -13,7 +14,9 @@ export const useBattleSequence = (sequence, player1, player2) => {
     const [playerOneHealth, setPlayerOneHealth] = useState(player1.maxHealth);
     const [playerOnePower, setPlayerOnePower] = useState(0)
     const [playerTwoHealth, setPlayerTwoHealth] = useState(player2.maxHealth);
-    const [playerTwoPower, setPlayerTwoPower] = useState(0)
+    const [playerTwoPower, setPlayerTwoPower] = useState(0);
+    const [playerOneDefenseBonus, setPlayerOneDefenseBonus] = useState(1);
+    const [playerTwoDefenseBonus, setPlayerTwoDefenseBonus] = useState(1);
     const [announcerMessage, setAnnouncerMessage] = useState('');
 
     const [playerOneAnimation, setPlayerOneAnimation] = useState('static');
@@ -25,10 +28,15 @@ export const useBattleSequence = (sequence, player1, player2) => {
         if (mode) {
             const attacker = turn === 0 ? player1 : player2;
             const receiver = turn === 0 ? player2 : player1;
+            const receiverDefenseBonus = turn === 0 ? playerTwoDefenseBonus : playerOneDefenseBonus
+
+            turn === 0
+                ? setPlayerOneDefenseBonus(1)
+                : setPlayerTwoDefenseBonus(1)
 
             switch (mode) {
                 case 'attack': {
-                    const damage = attack({attacker, receiver});
+                    const damage = attack({attacker, receiver, receiverDefenseBonus});
 
                     (async () => {
                         setInSequence(true);
@@ -65,6 +73,46 @@ export const useBattleSequence = (sequence, player1, player2) => {
 
 
                         setAnnouncerMessage(`Now it's ${receiver.name} turn!`);
+                        await wait(1500);
+
+                        setTurn(turn === 0 ? 1 : 0);
+                        setInSequence(false);
+                    })();
+
+                    break;
+                }
+
+
+                case 'defend': {
+                    const recovered = defend({attacker});
+
+                    (async () => {
+                        setInSequence(true);
+                        setAnnouncerMessage(`${attacker.name} has chosen to defend!`);
+                        await wait(1000);
+
+                        turn === 0
+                            ? setPlayerOneAnimation('defend')
+                            : setPlayerTwoAnimation('defend');
+                        await wait(1000);
+
+                        turn === 0
+                            ? setPlayerOneAnimation('static')
+                            : setPlayerTwoAnimation('static');
+                        await wait(500);
+
+                        setAnnouncerMessage(`${attacker.name} is ready!`);
+                        turn === 0
+                            ? setPlayerOneDefenseBonus(2)
+                            : setPlayerTwoDefenseBonus(2)
+
+                        turn === 0
+                            ? setPlayerOnePower(playerOnePower + 25)
+                            : setPlayerTwoPower(playerTwoPower + 25)
+
+                        await wait(2500);
+
+                        setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
                         await wait(1500);
 
                         setTurn(turn === 0 ? 1 : 0);
@@ -118,7 +166,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                 }
 
                 case 'special': {
-                    const damage = special({attacker, receiver});
+                    const damage = special({attacker, receiver, receiverDefenseBonus});
 
                     (async () => {
                         setInSequence(true);

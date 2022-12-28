@@ -102,7 +102,7 @@ export const Battle = ({onGameEnd, player1, player2}) => {
                         <div className={styles.hudChild}>
                             <BattleMenu
                                 onHeal={() => setSequence({mode: 'heal', turn})}
-                                onMagic={() => setSequence({mode: 'magic', turn})}
+                                onDefend={() => setSequence({mode: 'defend', turn})}
                                 onAttack={() => setSequence({mode: 'attack', turn})}
                                 onSpecial={() => setSequence({mode: 'special', turn})}
                             />

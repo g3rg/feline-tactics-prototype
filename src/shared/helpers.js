@@ -5,11 +5,12 @@ export const wait = ms =>
         }, ms);
     });
 
-export const attack = ({attacker, receiver}) => {
+export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
+    console.log(`${receiverDefenseBonus}`)
     const receivedDamage =
         attacker.attack - (attacker.level - receiver.level) * 1.25;
 
-    const finalDamage = receivedDamage - receiver.defense / 2;
+    const finalDamage = receivedDamage - (receiver.defense * receiverDefenseBonus) / 2;
 
     return finalDamage;
 };
@@ -25,15 +26,16 @@ export const heal = ({receiver}) => {
     return receiver.magic + receiver.level * 0.25;
 };
 
-export const special = ({attacker, receiver}) => {
-    // if (attacker.power === attacker.maxPower) {
+export const defend = ({receiver}) => {
+    // TODO?
+    return 0;
+}
+
+export const special = ({attacker, receiver, receiverDefenseBonus = 1}) => {
     const receivedDamage =
         attacker.attack - (attacker.level - receiver.level) * 1.25;
 
-    const finalDamage = (receivedDamage - receiver.defense / 2) * 1.75;
+    const finalDamage = (receivedDamage - (receiver.defense * receiverDefenseBonus) / 2) * 1.75;
 
     return finalDamage;
-    //} else {
-    //  return 0;
-    //}
 }
