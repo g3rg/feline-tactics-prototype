@@ -29,14 +29,13 @@ export const useBattleSequence = (sequence, player1, player2) => {
             const attacker = turn === 0 ? player1 : player2;
             const receiver = turn === 0 ? player2 : player1;
             const receiverDefenseBonus = turn === 0 ? playerTwoDefenseBonus : playerOneDefenseBonus
-
-            turn === 0
-                ? setPlayerOneDefenseBonus(1)
-                : setPlayerTwoDefenseBonus(1)
-
+            
             switch (mode) {
                 case 'attack': {
                     const damage = attack({attacker, receiver, receiverDefenseBonus});
+                    turn === 0
+                        ? setPlayerTwoDefenseBonus(1)
+                        : setPlayerOneDefenseBonus(1);
 
                     (async () => {
                         setInSequence(true);
@@ -167,6 +166,10 @@ export const useBattleSequence = (sequence, player1, player2) => {
 
                 case 'special': {
                     const damage = special({attacker, receiver, receiverDefenseBonus});
+
+                    turn === 0
+                        ? setPlayerTwoDefenseBonus(1)
+                        : setPlayerOneDefenseBonus(1);
 
                     (async () => {
                         setInSequence(true);

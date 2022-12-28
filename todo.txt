@@ -1,12 +1,12 @@
 [x] Attack - does attack + builds power
 [x] Special Attack - Does more damage
 [x] Defend - Double defence for next round + builds more power?
-[ ] Change defend to keep the bonus till next attacked
+[x] Change defend to keep the bonus till next attacked
 
 [ ] Special attack - needs to be full power + uses it all
 [ ] Heal - uses up to half of max power, heals for that amount. can always be used if you have any power...
-
-
+[ ] add animation/effect while defending?
+[ ] change announcer wording when attacking a defending player
 
 
 [ ] show announcer always on bigger screens
