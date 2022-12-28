@@ -1,23 +1,28 @@
-[x] Disable special if power not full
-[x] disable heal if no power
-[x] Special attack uses all power bar
-[ ] Heal - uses up to half of max power, heals for that amount. can always be used if you have any power...
-
-[ ] change announcer wording when attacking /special a defending player
-
 [ ] Character selection
     [ ] Img
     [ ] Name
     [ ] Bar graphs for stats...
-    [ ] More characters
 
 [ ] AI selects from remaining characters
 
 [ ] Improve AI logic
 
-[ ] Faces/movements/animations?
-[ ] Improve effects etc
-[ ] show announcer always on bigger screens
+[ ] Tweak character stat numbers
+    [ ] HEALING - use up to half of max power, heals for power amount if less.
+    [ ] ATTACKING -
+    [ ] DEFENDING - power generation based on a stat?
+    [ ] SPECIAL -
+
+[ ] More characters
+
+[ ] UI Improvements
+    [ ] Faces/movements/animations?
+    [ ] Improve effects etc
+    [ ] show announcer always on bigger screens
+
+[ ] Console errors
+
+V1 Complete!
 
 V2: Cats!
 [ ] Cat images
@@ -40,3 +45,11 @@ V3: Multiplayer!
 [x] Defend - Double defence for next round + builds more power?
 [x] Change defend to keep the bonus till next attacked
 [x] effect while defending
+
+[x] Disable special if power not full
+[x] disable heal if no power
+[x] Special attack uses all power bar
+[x] Heal - uses up power
+[x] Tweak healing amount + power usage
+
+[x] change announcer wording when attacking /special a defending player
