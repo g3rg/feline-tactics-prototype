@@ -85,10 +85,45 @@
     animation: shake 0.5s infinite;
 }
 
+/*
 .defend {
     transition: 0.2s;
     transform: translateY(25px);
     animation: shake 0.5s infinite;
+}
+*/
+@supports (mix-blend-mode: multiply) {
+    .defend {
+        position: relative;
+        overflow: hidden;
+        background-color: magenta;
+        background-blend-mode: screen;
+    }
+
+    .defend:before, .defend:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        mix-blend-mode: multiply;
+        transform: scale(1.05);
+    }
+
+    .defend:before {
+        background-color: yellow;
+        background-blend-mode: screen;
+        transform-origin: top left;
+    }
+
+    .defend:after {
+        background-color: cyan;
+        background-blend-mode: screen;
+        transform-origin: bottom right;
+    }
 }
 
 .special {

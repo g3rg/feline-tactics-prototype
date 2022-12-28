@@ -1,13 +1,7 @@
-[x] Attack - does attack + builds power
-[x] Special Attack - Does more damage
-[x] Defend - Double defence for next round + builds more power?
-[x] Change defend to keep the bonus till next attacked
-
 [ ] Special attack - needs to be full power + uses it all
 [ ] Heal - uses up to half of max power, heals for that amount. can always be used if you have any power...
-[ ] add animation/effect while defending?
-[ ] change announcer wording when attacking a defending player
 
+[ ] change announcer wording when attacking /special a defending player
 
 [ ] show announcer always on bigger screens
 [ ] Replace magic with Special Attack, uses / needs Power
@@ -17,17 +11,15 @@
     [ ] Name
     [ ] Bar graphs for stats...
 
-
-
-
 [ ] Cat images
 [ ] Cat selection
 [ ] Different cat powers
 [ ] have distinct specials in the future, change button label to be name of special
-
+[ ] distinct effects for specials and defending
 [ ] Multiplayer?
 
 [ ] Faces/movements/animations?
+[ ] Improve effects etc
 
 -- Completed
 [x] Complete tutorial - https://www.youtube.com/watch?v=r7Z7R25spkE
@@ -35,3 +27,8 @@
 [x] New characters
 [x] Basic Character images
 [x] Power bar for special
+[x] Attack - does attack + builds power
+[x] Special Attack - Does more damage
+[x] Defend - Double defence for next round + builds more power?
+[x] Change defend to keep the bonus till next attacked
+[x] effect while defending

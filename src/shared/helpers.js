@@ -6,7 +6,6 @@ export const wait = ms =>
     });
 
 export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
-    console.log(`${receiverDefenseBonus}`)
     const receivedDamage =
         attacker.attack - (attacker.level - receiver.level) * 1.25;
 
