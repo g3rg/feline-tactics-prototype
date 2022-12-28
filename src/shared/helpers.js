@@ -13,18 +13,11 @@ export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
 
     return finalDamage;
 };
-export const magic = ({attacker, receiver}) => {
-    const receivedDamage =
-        attacker.magic - (attacker.level - receiver.level) * 1.25;
 
-    const finalDamage = receivedDamage - receiver.magicDefense / 2;
-
-    return finalDamage;
-};
 export const heal = ({receiver, receiverPower}) => {
     if (receiverPower > 0) {
-        // Use up to half power to heal
-        const healing = receiver.magic + receiver.level * 0.25;
+
+        const healing = receiver.healing + receiver.level * 0.25;
         return [healing, 25];
     } else {
         return [0, 0]
