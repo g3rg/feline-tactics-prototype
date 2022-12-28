@@ -133,14 +133,16 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         setAnnouncerMessage(`${attacker.name} has chosen to heal!`);
                         await wait(1000);
 
+                        const origAnimation = turn === 0 ? playerOneAnimation : playerTwoAnimation
+
                         turn === 0
                             ? setPlayerOneAnimation('magic')
                             : setPlayerTwoAnimation('magic');
                         await wait(1000);
 
                         turn === 0
-                            ? setPlayerOneAnimation('static')
-                            : setPlayerTwoAnimation('static');
+                            ? setPlayerOneAnimation(origAnimation)
+                            : setPlayerTwoAnimation(origAnimation);
                         await wait(500);
 
                         setAnnouncerMessage(`${attacker.name} has recovered health.`);
