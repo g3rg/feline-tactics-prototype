@@ -33,9 +33,6 @@ export const useBattleSequence = (sequence, player1, player2) => {
             switch (mode) {
                 case 'attack': {
                     const damage = attack({attacker, receiver, receiverDefenseBonus});
-                    turn === 0
-                        ? setPlayerTwoDefenseBonus(1)
-                        : setPlayerOneDefenseBonus(1);
 
                     (async () => {
                         setInSequence(true);
@@ -64,9 +61,21 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             : setPlayerTwoPower(playerTwoPower + 10)
 
                         turn === 0
+                            ? setPlayerTwoDefenseBonus(1)
+                            : setPlayerOneDefenseBonus(1);
+
+                        turn === 0
                             ? setPlayerTwoAnimation('static')
                             : setPlayerOneAnimation('static');
-                        setAnnouncerMessage(`${receiver.name} felt that!`);
+
+                        const msg = turn === 0
+                            ? (playerTwoDefenseBonus > 1 ? ' defended well!' : "felt that!")
+                            : (playerOneDefenseBonus > 1 ? ' defended well!' : "felt that!")
+
+                        setAnnouncerMessage(
+                            `${receiver.name} ${msg}`,
+                        );
+
                         turn === 0
                             ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
                             : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
@@ -191,10 +200,6 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     if (damage > 0) {
 
 
-                        turn === 0
-                            ? setPlayerTwoDefenseBonus(1)
-                            : setPlayerOneDefenseBonus(1);
-
                         (async () => {
                             setInSequence(true);
                             setAnnouncerMessage(`${attacker.name} has used their special attack!`);
@@ -220,9 +225,19 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             turn === 0
                                 ? setPlayerTwoAnimation('static')
                                 : setPlayerOneAnimation('static');
+
+                            const msg = turn === 0
+                                ? (playerTwoDefenseBonus > 1 ? ' defended well!' : "doesn't know what hit them!")
+                                : (playerOneDefenseBonus > 1 ? ' defended well!' : "doesn't know what hit them!")
+
                             setAnnouncerMessage(
-                                `${receiver.name} doesn't know what hit them!`,
+                                `${receiver.name} ${msg}`,
                             );
+
+                            turn === 0
+                                ? setPlayerTwoDefenseBonus(1)
+                                : setPlayerOneDefenseBonus(1);
+
                             turn === 0
                                 ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
                                 : setPlayerOneHealth(h => (h - damage > 0 ? h - damage : 0)); // We don't want a negative HP.
