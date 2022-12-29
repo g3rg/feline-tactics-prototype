@@ -1,6 +1,6 @@
 import {
     wait,
-    limitToMax,
+    limitToBetweenZeroAndMax,
     special,
     heal,
     attack,
@@ -58,8 +58,8 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         await wait(750);
 
                         turn === 0
-                            ? setPlayerOnePower(limitToMax(playerOnePower + 10, player1.maxPower))
-                            : setPlayerTwoPower(limitToMax(playerTwoPower + 10, player2.maxPower));
+                            ? setPlayerOnePower(limitToBetweenZeroAndMax(playerOnePower + 10, player1.maxPower))
+                            : setPlayerTwoPower(limitToBetweenZeroAndMax(playerTwoPower + 10, player2.maxPower));
 
                         turn === 0
                             ? setPlayerTwoDefenseBonus(1)
@@ -119,8 +119,8 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             : setPlayerTwoDefenseBonus(2)
 
                         turn === 0
-                            ? setPlayerOnePower(limitToMax(playerOnePower + 25, player1.maxPower))
-                            : setPlayerTwoPower(limitToMax(playerTwoPower + 25, player2.maxPower))
+                            ? setPlayerOnePower(limitToBetweenZeroAndMax(playerOnePower + 25, player1.maxPower))
+                            : setPlayerTwoPower(limitToBetweenZeroAndMax(playerTwoPower + 25, player2.maxPower))
 
                         await wait(2500);
 
@@ -158,8 +158,8 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             await wait(500);
 
                             turn === 0
-                                ? setPlayerOnePower(playerOnePower - powerUsed)
-                                : setPlayerTwoPower(playerTwoPower - powerUsed)
+                                ? setPlayerOnePower(limitToBetweenZeroAndMax(playerOnePower - powerUsed))
+                                : setPlayerTwoPower(limitToBetweenZeroAndMax(playerTwoPower - powerUsed))
 
                             setAnnouncerMessage(`${attacker.name} has recovered health.`);
                             turn === 0

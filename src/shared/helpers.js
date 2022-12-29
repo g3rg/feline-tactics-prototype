@@ -9,10 +9,11 @@ export const getRandomFromArray = arr => {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-export const limitToMax = (value, maxValue) => {
+export const limitToBetweenZeroAndMax = (value, maxValue) => {
+    if (value < 0) {
+        return 0;
+    }
     if (value > maxValue) {
-        console.log('Limiting...')
         return maxValue;
     }
     return value;
@@ -29,7 +30,6 @@ export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
 
 export const heal = ({receiver, receiverPower}) => {
     if (receiverPower > 0) {
-
         const healing = receiver.healing + receiver.level * 0.25;
         return [healing, 25];
     } else {
