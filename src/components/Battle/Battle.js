@@ -19,7 +19,7 @@ export const Battle = ({onGameEnd, player1, player2}) => {
         announcerMessage,
     } = useBattleSequence(sequence, player1, player2);
 
-    const aiChoice = useAIOpponent(turn);
+    const aiChoice = useAIOpponent(turn, player2, playerTwoHealth, playerTwoPower);
 
     useEffect(() => {
         if (aiChoice && turn === 1 && !inSequence) {

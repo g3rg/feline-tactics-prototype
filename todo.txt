@@ -1,6 +1,4 @@
-
 [ ] Bug - healing when only small amount of power doesn't use up power?
-[ ] Improve AI logic
 
 [ ] Tweak character stat numbers
     [ ] HEALING - use up to half of max power, heals for power amount if less.
@@ -59,3 +57,4 @@ V3: Multiplayer!
     [x] Bar graphs for stats...
 
 [x] AI selects random character
+[x] Improve AI logic
