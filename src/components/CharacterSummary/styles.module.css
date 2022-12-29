@@ -7,3 +7,8 @@
 .level {
     font-size: 20px;
 }
+
+.characterView {
+    grid-column: 2;
+    griw-row: 1 / 5;
+}
