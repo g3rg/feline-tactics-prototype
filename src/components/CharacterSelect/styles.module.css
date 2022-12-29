@@ -20,7 +20,6 @@
 
 .prevCharacter {
     grid-column: 1;
-    grid-row: 1 / 5;
     border: none;
     outline: none;
     padding: 10px;
@@ -33,7 +32,6 @@
 
 .nextCharacter {
     grid-column: 3;
-    grid-row: 1 / 5;
 }
 
 
