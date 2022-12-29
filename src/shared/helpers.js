@@ -5,6 +5,10 @@ export const wait = ms =>
         }, ms);
     });
 
+export const getRandomFromArray = arr => {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
 
 export const limitToMax = (value, maxValue) => {
     if (value > maxValue) {

@@ -1,17 +1,12 @@
-[ ] Character selection
-    [ ] Img
-    [ ] Name
-    [ ] Bar graphs for stats...
 
-[ ] AI selects from remaining characters
-
+[ ] Bug - healing when only small amount of power doesn't use up power?
 [ ] Improve AI logic
 
 [ ] Tweak character stat numbers
     [ ] HEALING - use up to half of max power, heals for power amount if less.
     [ ] ATTACKING -
     [ ] DEFENDING - power generation based on a stat?
-    [ ] SPECIAL - Single Big Attack, 2 x 75% attacks (good for breaking defence), 75% attack but only uses part of power?
+    [ ] SPECIAL For each - Single Big Attack, 2 x 75% attacks (good for breaking defence), 75% attack but only uses part of power?
     [ ]
 
 [ ] More characters
@@ -58,3 +53,9 @@ V3: Multiplayer!
 [x] change announcer wording when attacking /special a defending player
 [x] Limit HP + POW to max values
 
+[x] Character selection
+    [x] Img
+    [x] Name
+    [x] Bar graphs for stats...
+
+[x] AI selects random character
