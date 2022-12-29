@@ -1,9 +1,15 @@
 import {useEffect, useState} from "react";
 import styles from './styles.module.css';
 import {characters} from "shared";
+import {CharacterSummary} from "components";
 
 export const CharacterSelect = ({onClick}) => {
     const [selectedCharacter, setSelectedCharacter] = useState(0)
+    const [selectedCharDetails, setSelectedCharDetails] = useState()
+
+    useEffect(() => {
+        setSelectedCharDetails(getCharacter(selectedCharacter))
+    }, [selectedCharacter])
 
     const setPrevChar = () => {
         if (selectedCharacter > 0) {
@@ -26,23 +32,24 @@ export const CharacterSelect = ({onClick}) => {
         return characters[charKey]
     }
 
-    return (
-        <>
-            <div className={styles.gameHeader}>Select Your Character!</div>
-            <div className={styles.characterSelection}>
-                <div className={styles.prevCharacter}>
-                    <button className={styles.startButton} onClick={setPrevChar}>&lt;</button>
+    return selectedCharDetails ? (
+            <>
+                <div className={styles.gameHeader}>Select Your Character!</div>
+                <div className={styles.characterSelection}>
+                    <div className={styles.prevCharacter}>
+                        <button className={styles.startButton} onClick={setPrevChar}>&lt;</button>
+                    </div>
+                    <CharacterSummary selectedCharDetails={selectedCharDetails}/>
+                    <div className={styles.nextCharacter}>
+                        <button className={styles.startButton} onClick={setNextChar}>&gt;</button>
+                    </div>
                 </div>
-                <div className={styles.characterView}>{getCharacter(selectedCharacter).name}</div>
-                <div className={styles.nextCharacter}>
-                    <button className={styles.startButton} onClick={setNextChar}>&gt;</button>
+                <div>
+                    <button className={styles.startButton}
+                            onClick={() => onClick(selectedCharDetails.name)}>Start!
+                    </button>
                 </div>
-            </div>
-            <div>
-                <button className={styles.startButton}
-                        onClick={() => onClick(getCharacter(selectedCharacter).name)}>Start!
-                </button>
-            </div>
-        </>
-    )
+            </>
+        )
+        : (<div>loading...</div>)
 }
