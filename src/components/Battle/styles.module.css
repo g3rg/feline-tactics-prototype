@@ -85,14 +85,6 @@
     animation: shake 0.5s infinite;
 }
 
-/*
-.defend {
-    transition: 0.2s;
-    transform: translateY(25px);
-    animation: shake 0.5s infinite;
-}
-*/
-
 .defend {
     -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
     filter: blur(5px);

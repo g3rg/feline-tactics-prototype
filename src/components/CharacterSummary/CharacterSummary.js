@@ -3,10 +3,9 @@ import styles from './styles.module.css';
 
 export const CharacterSummary = ({selectedCharDetails}) => {
     return (
-        <div className={styles.main}>
+        <>
             <div className={styles.info}>
                 <div className={styles.name}>{selectedCharDetails.name}</div>
-                <div className={styles.level}>Lvl {selectedCharDetails.level}</div>
             </div>
 
             <div className={styles.health}>
@@ -16,5 +15,5 @@ export const CharacterSummary = ({selectedCharDetails}) => {
                 <Bar label="POW" value={selectedCharDetails.maxPower} maxValue={200}/>
             </div>
 
-        </div>)
+        </>)
 }
