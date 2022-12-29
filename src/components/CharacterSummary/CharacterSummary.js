@@ -24,13 +24,9 @@ export const CharacterSummary = ({selectedCharDetails}) => {
             <div className={styles.def}>
                 <Bar label="DEF" value={selectedCharDetails.defense} maxValue={100}/>
             </div>
-            <div className={styles.power}>
-                <Bar label="POW" value={selectedCharDetails.maxPower} maxValue={100}/>
-            </div>
             <div className={styles.heal}>
                 <Bar label="HEAL" value={selectedCharDetails.healing} maxValue={100}/>
             </div>
-
         </div>
     )
 }

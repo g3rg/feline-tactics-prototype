@@ -36,18 +36,14 @@ export const CharacterSelect = ({onClick}) => {
             <>
                 <div className={styles.gameHeader}>Select Your Character!</div>
                 <div className={styles.characterSelection}>
-                    <div className={styles.prevCharacter}>
-                        <button className={styles.startButton} onClick={setPrevChar}>&lt;</button>
-                    </div>
                     <CharacterSummary selectedCharDetails={selectedCharDetails}/>
-                    <div className={styles.nextCharacter}>
-                        <button className={styles.startButton} onClick={setNextChar}>&gt;</button>
-                    </div>
                 </div>
-                <div>
+                <div className={styles.controlPanel}>
+                    <button className={styles.prevCharacter} onClick={setPrevChar}>&lt;</button>
                     <button className={styles.startButton}
                             onClick={() => onClick(selectedCharDetails.name)}>Start!
                     </button>
+                    <button className={styles.nextCharacter} onClick={setNextChar}>&gt;</button>
                 </div>
             </>
         )

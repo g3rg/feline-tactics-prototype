@@ -13,7 +13,7 @@ export const characters = {
     },
     "Charlie": {
         level: 1, maxHealth: 80, name: 'Charlie',
-        healing: 35, maxPower: 50, attack: 50, defense: 50,
+        healing: 35, maxPower: 50, attack: 50, defense: 55,
         img: 'assets/charlie.png',
         imgSrc: 'http://www.avatarsinpixels.com/minipix/eyJIYWlyTG93ZXIiOiIxMiIsIkJvZHkiOiIxIiwiRXllcyI6IjEyIiwiTW91dGgiOiI4IiwiU29ja3MiOiI2IiwiU2hvZXMiOiIyIiwiR2xvdmVzIjoiMyIsIlBhbnRzIjoiMyIsIkphY2tldCI6IjIiLCJIYWlyIjoiOSIsImV5ZXNUb25lIjoiMTIxNTllIiwiZXllc1RvbmUyIjoiNDMwNjExIiwibWFza1RvbmUiOiIwYzkzNTciLCJoYWlyVG9uZSI6IjVkNThmMCIsImhhaXJUb25lMiI6IjJhZGQ1ZSIsInVuZGVyd2VhclRvbmUiOiIzMjQ5NmYiLCJ1bmRlcndlYXJUb25lMiI6ImQyZDNmZCIsInBhbnRzVG9uZSI6IjdjOTM2NCIsInBhbnRzVG9uZTIiOiI1NzhkYzQiLCJ0b3BUb25lIjoiMTAxNjhiIiwidG9wVG9uZTIiOiI3OTQ0YzUiLCJ3aW5nc1RvbmUiOiIxY2I2YjYiLCJ3aW5nc1RvbmUyIjoiNGI5YjAwIiwic2hvZXNUb25lIjoiODJlYmVkIiwic29ja3NUb25lIjoiZjI0ZjJlIiwic29ja3NUb25lMiI6IjllOGJmYiIsImdsb3Zlc1RvbmUiOiJiMDMzM2YiLCJnbG92ZXNUb25lMiI6IjRiYmJlMyIsImhhdFRvbmUiOiIxMGMzYzQiLCJoYXRUb25lMiI6IjAyNmZmYiIsImNhcGVUb25lIjoiYzkyMjRiIiwiY2FwZVRvbmUyIjoiZjZkNGM2IiwiYmVsdFRvbmUiOiI4MWJhODkiLCJqYWNrZXRUb25lIjoiY2I4MDc1IiwiamFja2V0VG9uZTIiOiI3YjI3NGEiLCJuZWNrVG9uZSI6ImNlYjAxOSIsIm5lY2tUb25lMiI6IjNiOWZkMiJ9/1/show.png'
     }

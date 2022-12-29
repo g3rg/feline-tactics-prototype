@@ -7,17 +7,28 @@
 }
 
 .characterSelection {
-    display: grid;
-    height: 600px;
+    height: 75%;
     width: 90%;
-    grid-row: 1 / 5;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+}
+
+.controlPanel {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 10% 70% 10%;
+    grid-gap: 10px;
 }
 
 .prevCharacter {
     grid-column: 1;
     grid-row: 1 / 5;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 3px gray;
 }
 
 .nextCharacter {
@@ -25,10 +36,6 @@
     grid-row: 1 / 5;
 }
 
-.characterView {
-    grid-column: 2;
-    griw-row: 1 / 5;
-}
 
 .navButton {
     border: none;
@@ -42,6 +49,7 @@
 }
 
 .startButton {
+    grid-column: 2;
     border: none;
     outline: none;
     padding: 15px;
