@@ -18,7 +18,7 @@ export const characters = {
         img: 'assets/bobinia.png',
         imgSrc: 'http://www.avatarsinpixels.com/minipix/eyJIYWlyTG93ZXIiOiIxOCIsIkJvZHkiOiIyIiwiRXllcyI6IjIyIiwiTW91dGgiOiIxMSIsIlNvY2tzIjoiMTYiLCJTaG9lcyI6IjUiLCJHbG92ZXMiOiIxIiwiUGFudHMiOiIxIiwiVG9wIjoiMTYiLCJKYWNrZXQiOiIyIiwiSGFpciI6IjIzIiwiZXllc1RvbmUiOiIzMzYzZTAiLCJleWVzVG9uZTIiOiI3NDFlNTgiLCJtYXNrVG9uZSI6IjA5YTJiMiIsImhhaXJUb25lIjoiOGJhNWJkIiwiaGFpclRvbmUyIjoiMjI2MDAyIiwidW5kZXJ3ZWFyVG9uZSI6IjQzYzY0YyIsInVuZGVyd2VhclRvbmUyIjoiNjlkMzlhIiwicGFudHNUb25lIjoiZDgzZjE1IiwicGFudHNUb25lMiI6ImM0N2MzNSIsInRvcFRvbmUiOiJmYmY3YWQiLCJ0b3BUb25lMiI6ImU5ZDQ4OCIsIndpbmdzVG9uZSI6Ijg5MzNkNSIsIndpbmdzVG9uZTIiOiJkYzhlN2EiLCJzaG9lc1RvbmUiOiIyOGM2NTEiLCJzb2Nrc1RvbmUiOiI5YzMyYmUiLCJzb2Nrc1RvbmUyIjoiYWJlYzBlIiwiZ2xvdmVzVG9uZSI6ImYxNmRiMCIsImdsb3Zlc1RvbmUyIjoiNDEzZjBlIiwiaGF0VG9uZSI6ImFiMzM0YSIsImhhdFRvbmUyIjoiZWZmY2Q1IiwiY2FwZVRvbmUiOiI3ZDg5YTQiLCJjYXBlVG9uZTIiOiIyYTI1M2MiLCJiZWx0VG9uZSI6ImMzNmE0NyIsImphY2tldFRvbmUiOiI5YTJhMzYiLCJqYWNrZXRUb25lMiI6ImQzNDg0MiIsIm5lY2tUb25lIjoiM2Q3ZDUwIiwibmVja1RvbmUyIjoiNTc3NGEyIn0=/1/show.png',
         specials: {
-            'Drain Attack': {
+            'Precision Attack': {
                 desc: "A greater attack that doesn't use all your power!",
                 attacks: 1,
                 attackMultiplier: 1.5,
