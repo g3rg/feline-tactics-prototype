@@ -16,10 +16,10 @@ export const useAIOpponent = (turn, player2, playerTwoHealth, playerTwoPower) =>
             }
 
             // TODO: If full power and already defending, don't defend?
-            
+
             setAIChoice(options[Math.floor(Math.random() * options.length)]);
         }
-    }, [turn, playerTwoHealth, playerTwoPower]);
+    }, [turn, playerTwoHealth, playerTwoPower, player2]);
 
     return aiChoice;
 };

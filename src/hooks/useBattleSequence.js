@@ -95,7 +95,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
 
 
                 case 'defend': {
-                    const recovered = defend({attacker});
+                    defend({attacker});
 
                     (async () => {
                         setInSequence(true);
