@@ -1,11 +1,11 @@
-[ ] Bug - healing when only small amount of power doesn't use up power?
-
-[ ] Tweak character stat numbers
-    [ ] HEALING - use up to half of max power, heals for power amount if less.
-    [ ] ATTACKING -
+[ ] Tweak action logic
+    [x] HEALING - use up to half of max power, heals for power amount if less.
+    [ ] ATTACKING - prevent negative damage
     [ ] DEFENDING - power generation based on a stat?
     [ ] SPECIAL For each - Single Big Attack, 2 x 75% attacks (good for breaking defence), 75% attack but only uses part of power?
     [ ]
+
+[ ] Tweak character stat numbers
 
 [ ] More characters
 
@@ -58,3 +58,5 @@ V3: Multiplayer!
 
 [x] AI selects random character
 [x] Improve AI logic
+[x] Bug - healing when only small amount of power doesn't use up power?
+[x] Bug - Bob attacking Charlie when she's defending ends up healing her

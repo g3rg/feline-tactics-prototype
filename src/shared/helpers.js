@@ -22,10 +22,10 @@ export const limitToBetweenZeroAndMax = (value, maxValue) => {
 export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
     const receivedDamage =
         attacker.attack - (attacker.level - receiver.level) * 1.25;
-
+    
     const finalDamage = receivedDamage - (receiver.defense * receiverDefenseBonus) / 2;
 
-    return finalDamage;
+    return finalDamage < 0 ? 0 : finalDamage
 };
 
 export const heal = ({receiver, receiverPower}) => {
