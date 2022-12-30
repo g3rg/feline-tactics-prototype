@@ -22,7 +22,7 @@ export const limitToBetweenZeroAndMax = (value, maxValue) => {
 export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
     const receivedDamage =
         attacker.attack - (attacker.level - receiver.level) * 1.25;
-    
+
     const finalDamage = receivedDamage - (receiver.defense * receiverDefenseBonus) / 2;
 
     return finalDamage < 0 ? 0 : finalDamage
@@ -46,10 +46,8 @@ export const defend = ({receiver}) => {
 
 export const special = ({attacker, receiver, receiverDefenseBonus = 1, attackerPower}) => {
     if (attackerPower >= attacker.maxPower) {
-        const receivedDamage =
-            attacker.attack - (attacker.level - receiver.level) * 1.25;
-
-        const finalDamage = (receivedDamage - (receiver.defense * receiverDefenseBonus) / 2) * 1.75;
+        const atkDamage = attack({attacker, receiver, receiverDefenseBonus});
+        const finalDamage = atkDamage * 1.75;
 
         return finalDamage;
     } else {

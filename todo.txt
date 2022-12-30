@@ -1,9 +1,19 @@
 [ ] Tweak action logic
     [x] HEALING - use up to half of max power, heals for power amount if less.
-    [ ] ATTACKING - prevent negative damage
+    [x] ATTACKING - prevent negative damage
+    [ ] SPECIAL For each
+        - Single Big Attack, 2 x 75% attacks (good for breaking defence), 75% attack but only uses part of power?
+        [x] Data structure
+        [ ] Display on select screen
+        [x] Display on button
+        [ ] Announcer
+        [ ] Special action
+
     [ ] DEFENDING - power generation based on a stat?
-    [ ] SPECIAL For each - Single Big Attack, 2 x 75% attacks (good for breaking defence), 75% attack but only uses part of power?
-    [ ]
+
+[ ] Change power bar colour on 100%?
+
+[ ] Announcer wording improvements, more options and randomly select
 
 [ ] Tweak character stat numbers
 

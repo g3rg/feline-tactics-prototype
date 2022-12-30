@@ -105,6 +105,7 @@ export const Battle = ({onGameEnd, player1, player2}) => {
                                 onDefend={() => setSequence({mode: 'defend', turn})}
                                 onAttack={() => setSequence({mode: 'attack', turn})}
                                 onSpecial={() => setSequence({mode: 'special', turn})}
+                                specials={player1.specials}
                             />
                         </div>
                     )}

@@ -105,14 +105,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         turn === 0
                             ? setPlayerOneAnimation('defend')
                             : setPlayerTwoAnimation('defend');
-                        // await wait(1000);
 
-                        /*
-                        turn === 0
-                            ? setPlayerOneAnimation('static')
-                            : setPlayerTwoAnimation('static');
-                        await wait(500);
-                        */
                         setAnnouncerMessage(`${attacker.name} is ready!`);
                         turn === 0
                             ? setPlayerOneDefenseBonus(2)
@@ -197,13 +190,11 @@ export const useBattleSequence = (sequence, player1, player2) => {
                 case 'special': {
                     const attackerPower = turn === 0 ? playerOnePower : playerTwoPower
                     const damage = special({attacker, receiver, receiverDefenseBonus, attackerPower});
-
+                    const specialName = Object.keys(attacker.specials)[0]
                     if (damage > 0) {
-
-
                         (async () => {
                             setInSequence(true);
-                            setAnnouncerMessage(`${attacker.name} has used their special attack!`);
+                            setAnnouncerMessage(`${attacker.name} used their ${specialName}!`);
                             await wait(1000);
 
                             const origAnimation = turn === 0 ? playerOneAnimation : playerTwoAnimation
