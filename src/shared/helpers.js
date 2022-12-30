@@ -30,8 +30,10 @@ export const attack = ({attacker, receiver, receiverDefenseBonus = 1}) => {
 
 export const heal = ({receiver, receiverPower}) => {
     if (receiverPower > 0) {
-        const healing = receiver.healing + receiver.level * 0.25;
-        return [healing, 25];
+        const powerUsed = limitToBetweenZeroAndMax(receiverPower, 25);
+        const healing = (receiver.healing + receiver.level * 0.25) * (powerUsed / 25);
+
+        return [healing, powerUsed];
     } else {
         return [0, 0]
     }
