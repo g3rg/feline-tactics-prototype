@@ -6,12 +6,13 @@
         [x] Data structure
         [x] Display on button
         [x] Announcer
-        [ ] Display on select screen
+        [x] Display on select screen
         [ ] Special action
 
     [ ] DEFENDING - power generation based on a stat?
 
-[ ] Change power bar colour on 100%?
+
+[ ] Change the yellow font colour
 
 [ ] Announcer wording improvements, more options and randomly select
     missing apostrophe 's' in places
@@ -71,3 +72,5 @@ V3: Multiplayer!
 [x] Improve AI logic
 [x] Bug - healing when only small amount of power doesn't use up power?
 [x] Bug - Bob attacking Charlie when she's defending ends up healing her
+[x] Change power bar colour on 100%?
+

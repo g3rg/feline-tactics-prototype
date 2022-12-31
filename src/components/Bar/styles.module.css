@@ -39,3 +39,14 @@
     transition: 0.35s;
 }
 
+.valueFull {
+    height: 100%;
+    background-color: #aa53cb;
+    transition: 0.35s;
+}
+
+.valueAltFull {
+    height: 100%;
+    background-color: #821400;
+    transition: 0.35s;
+}
