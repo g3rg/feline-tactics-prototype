@@ -1,5 +1,4 @@
-import {getRandomFromArray} from "./helpers";
-
+/* eslint-disable */
 export const attackStrings = [
     '`${attacker.name} has chosen to attack!`',
     '`Here comes ${attacker.name}`',
@@ -32,7 +31,7 @@ export const defendingStrings = [
 
 export const healingStrings = [
     "`${attacker.name} has chosen to heal!`",
-    "Time to heal for `${attacker.name}!`"
+    "`Time to heal for ${attacker.name}!`"
 ]
 
 export const healedStrings = [
@@ -43,4 +42,16 @@ export const healedStrings = [
 export const cantHealStrings = [
     "`${attacker.name} couldn't heal!`",
     "`Not enough power for healing!`"
+]
+
+export const specialStrings = [
+    "`${attacker.name} used their ${specialName}!`"
+]
+
+export const damagedSpecialStrings = [
+    "`${receiver.name} doesn't know what hit them!`"
+]
+
+export const cantSpecialStrings = [
+    "`${attacker.name} couldn't use their Special Power!`"
 ]

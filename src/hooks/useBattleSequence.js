@@ -13,10 +13,11 @@ import {
     defendStrings,
     defendingStrings,
     healingStrings,
-    healedStrings, cantHealStrings
+    healedStrings, cantHealStrings, specialStrings, damagedSpecialStrings, cantSpecialStrings
 } from 'shared';
 import {useEffect, useState} from 'react';
 
+/* eslint-disable no-eval */
 export const useBattleSequence = (sequence, player1, player2) => {
     const [turn, setTurn] = useState(0);
     const [inSequence, setInSequence] = useState(false);
@@ -199,7 +200,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     if (damage > 0) {
                         (async () => {
                             setInSequence(true);
-                            setAnnouncerMessage(`${attacker.name} used their ${specialName}!`);
+                            setAnnouncerMessage(eval(getRandomFromArray(specialStrings)));
                             await wait(1000);
 
                             const origAnimation = turn === 0 ? playerOneAnimation : playerTwoAnimation
@@ -224,13 +225,10 @@ export const useBattleSequence = (sequence, player1, player2) => {
                                 : setPlayerOneAnimation('static');
 
                             const msg = turn === 0
-                                ? (playerTwoDefenseBonus > 1 ? ' defended well!' : "doesn't know what hit them!")
-                                : (playerOneDefenseBonus > 1 ? ' defended well!' : "doesn't know what hit them!")
+                                ? (playerTwoDefenseBonus > 1 ? defendedStrings : damagedSpecialStrings)
+                                : (playerOneDefenseBonus > 1 ? defendedStrings : damagedSpecialStrings)
 
-                            setAnnouncerMessage(
-                                `${receiver.name} ${msg}`,
-                            );
-
+                            setAnnouncerMessage(eval(getRandomFromArray(msg)));
                             turn === 0
                                 ? setPlayerTwoDefenseBonus(1)
                                 : setPlayerOneDefenseBonus(1);
@@ -254,7 +252,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     } else {
                         (async () => {
                             setInSequence(true);
-                            setAnnouncerMessage(`${attacker.name} couldn't use their Special Power!`);
+                            setAnnouncerMessage(eval(getRandomFromArray(cantSpecialStrings)));
                             await wait(1000);
                             setTurn(turn === 0 ? 1 : 0)
                             setInSequence(false)
