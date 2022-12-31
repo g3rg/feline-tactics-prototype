@@ -1,8 +1,7 @@
-[ ] Properly centre things
-    [ ] Just the controls for character selection to go?
-
 [ ] Upgrade libs to try and fix hot reload error
-
+    [ ] react
+    [ ] react-scripts
+    [ ]
 [ ] Start Screen
 
 [ ] Tweak action logic
@@ -88,4 +87,7 @@ V3: Multiplayer!
     [x] defend
     [x] heal
     [x] special
+
+[x] Properly centre things
+    [x] Just the controls for character selection to go?
 
