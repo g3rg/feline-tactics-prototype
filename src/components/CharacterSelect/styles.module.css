@@ -1,8 +1,8 @@
 .gameHeader {
     font-size: 30px;
     text-align: center;
-    color: #fdac00;
-    text-shadow: 0px 0px 5px #7f0000;
+    color: #303080;
+    text-shadow: 0px 0px 5px #151550;
     font-family: 'Press Start 2P', cursive;
     padding: 5px;
 }
@@ -15,7 +15,7 @@
 .controlPanel {
     display: grid;
     width: 90%;
-    grid-template-columns: 10% 70% 10%;
+    grid-template-columns: 10% 80% 10%;
     grid-gap: 10px;
 }
 
@@ -28,6 +28,8 @@
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 0px 3px gray;
+    color: #303080;
+    text-shadow: 0px 0px 3px #151550;
 }
 
 .prevCharacter {
@@ -36,18 +38,6 @@
 
 .nextCharacter {
     grid-column: 3;
-}
-
-
-.navButton {
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    background-color: white;
-    box-shadow: 0px 0px 3px gray;
 }
 
 .startButton {
@@ -60,4 +50,7 @@
     border-radius: 5px;
     background-color: white;
     box-shadow: 0px 0px 3px gray;
+    color: #303080;
+    text-shadow: 0px 0px 3px #151550;
+    font-family: 'Press Start 2P', cursive;
 }

@@ -24,30 +24,32 @@ export const App = () => {
 
     return (
         <div className={styles.main}>
-            {mode === 'start' && (
-                <StartMenu onStartClick={() => setMode('characterSelect')}/>
-            )}
+            <div className={styles.mainBody}>
+                {mode === 'start' && (
+                    <StartMenu onStartClick={() => setMode('characterSelect')}/>
+                )}
 
-            {mode === 'characterSelect' && (
-                <CharacterSelect onClick={(selectedChar) => {
-                    startBattle(selectedChar);
-                }}/>
-            )}
+                {mode === 'characterSelect' && (
+                    <CharacterSelect onClick={(selectedChar) => {
+                        startBattle(selectedChar);
+                    }}/>
+                )}
 
-            {mode === 'battle' && (
-                <Battle
-                    onGameEnd={winner => {
-                        setWinner(winner);
-                        setMode('gameOver');
-                    }}
-                    player1={characters[selectedChar]}
-                    player2={characters[aiChar]}
-                />
-            )}
+                {mode === 'battle' && (
+                    <Battle
+                        onGameEnd={winner => {
+                            setWinner(winner);
+                            setMode('gameOver');
+                        }}
+                        player1={characters[selectedChar]}
+                        player2={characters[aiChar]}
+                    />
+                )}
 
-            {mode === 'gameOver' && !!winner && (
-                <EndMenu winner={winner} onStartClick={() => setMode('characterSelect')}/>
-            )}
+                {mode === 'gameOver' && !!winner && (
+                    <EndMenu winner={winner} onStartClick={() => setMode('characterSelect')}/>
+                )}
+            </div>
         </div>
     );
 };
