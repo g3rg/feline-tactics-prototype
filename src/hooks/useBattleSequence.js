@@ -6,7 +6,14 @@ import {
     attack,
     defend,
     getRandomFromArray,
-    attackStrings, defendedStrings, damagedStrings, turnStrings, defendStrings, defendingStrings
+    attackStrings,
+    defendedStrings,
+    damagedStrings,
+    turnStrings,
+    defendStrings,
+    defendingStrings,
+    healingStrings,
+    healedStrings, cantHealStrings
 } from 'shared';
 import {useEffect, useState} from 'react';
 
@@ -115,7 +122,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             : setPlayerTwoPower(limitToBetweenZeroAndMax(playerTwoPower + 25, player2.maxPower))
 
                         await wait(2500);
-                        
+
                         setAnnouncerMessage(eval(getRandomFromArray(turnStrings)));
                         await wait(1500);
 
@@ -126,7 +133,6 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     break;
                 }
 
-
                 case 'heal': {
                     const receiverPower = turn === 0 ? playerOnePower : playerTwoPower;
                     const [recovered, powerUsed] = heal({receiver: attacker, receiverPower});
@@ -134,7 +140,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     if (recovered > 0) {
                         (async () => {
                             setInSequence(true);
-                            setAnnouncerMessage(`${attacker.name} has chosen to heal!`);
+                            setAnnouncerMessage(eval(getRandomFromArray(healingStrings)));
                             await wait(1000);
 
                             const origAnimation = turn === 0 ? playerOneAnimation : playerTwoAnimation
@@ -153,7 +159,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                                 ? setPlayerOnePower(limitToBetweenZeroAndMax(playerOnePower - powerUsed))
                                 : setPlayerTwoPower(limitToBetweenZeroAndMax(playerTwoPower - powerUsed))
 
-                            setAnnouncerMessage(`${attacker.name} has recovered health.`);
+                            setAnnouncerMessage(eval(getRandomFromArray(healedStrings)));
                             turn === 0
                                 ? setPlayerOneHealth(h =>
                                     h + recovered <= attacker.maxHealth
@@ -167,7 +173,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                                 ); // We don't want to set HP more than the max
                             await wait(2500);
 
-                            setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
+                            setAnnouncerMessage(eval(getRandomFromArray(turnStrings)));
                             await wait(1500);
 
                             setTurn(turn === 0 ? 1 : 0);
@@ -176,7 +182,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     } else {
                         (async () => {
                             setInSequence(true);
-                            setAnnouncerMessage(`${attacker.name} couldn't heal!`);
+                            setAnnouncerMessage(eval(getRandomFromArray(cantHealStrings)));
                             await wait(1000);
                             setTurn(turn === 0 ? 1 : 0)
                             setInSequence(false)
@@ -239,7 +245,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
 
                             await wait(2500);
 
-                            setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
+                            setAnnouncerMessage(eval(getRandomFromArray(turnStrings)));
                             await wait(1500);
 
                             setTurn(turn === 0 ? 1 : 0);

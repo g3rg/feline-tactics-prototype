@@ -29,3 +29,18 @@ export const defendingStrings = [
     "`${attacker.name} is ready!`",
     "`${attacker.name} is prepared!`"
 ]
+
+export const healingStrings = [
+    "`${attacker.name} has chosen to heal!`",
+    "Time to heal for `${attacker.name}!`"
+]
+
+export const healedStrings = [
+    "`${attacker.name} has recovered health.`",
+    "`${attacker.name} feels better!`"
+]
+
+export const cantHealStrings = [
+    "`${attacker.name} couldn't heal!`",
+    "`Not enough power for healing!`"
+]

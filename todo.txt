@@ -14,8 +14,8 @@
 [ ] Announcer wording improvements, more options and randomly select
     missing apostrophe 's' in places
     [x] attack
-    [ ] defend
-    [ ] heal
+    [x] defend
+    [x] heal
     [ ] special
 
 [ ] Lots more strings
