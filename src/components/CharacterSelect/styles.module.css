@@ -10,6 +10,8 @@
 .characterSelection {
     height: 75%;
     width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .controlPanel {
@@ -17,6 +19,8 @@
     width: 90%;
     grid-template-columns: 10% 80% 10%;
     grid-gap: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .prevCharacter, .nextCharacter {
