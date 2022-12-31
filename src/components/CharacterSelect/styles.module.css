@@ -38,10 +38,12 @@
 
 .prevCharacter {
     grid-column: 1;
+    margin-right: 0;
 }
 
 .nextCharacter {
     grid-column: 3;
+    margin-left: 0;
 }
 
 .startButton {

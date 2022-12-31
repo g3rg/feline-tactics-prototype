@@ -9,6 +9,11 @@
     padding: 5px;
 }
 
+.playerOneSprite {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .name,
 .level {
     font-size: 20px;
