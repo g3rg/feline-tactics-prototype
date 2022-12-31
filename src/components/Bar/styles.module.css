@@ -8,8 +8,10 @@
 }
 
 .label {
-    font-size: 22px;
+    font-size: 12px;
     font-weight: bold;
+    text-shadow: 0px 0px 2px #151550;
+    font-family: 'Press Start 2P', cursive;
     height: 35px;
     display: flex;
     align-items: center;
