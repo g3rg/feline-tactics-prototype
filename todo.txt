@@ -11,11 +11,18 @@
 
     [ ] DEFENDING - power generation based on a stat?
 
+[ ] Announcer wording improvements, more options and randomly select
+    missing apostrophe 's' in places
+    [x] attack
+    [ ] defend
+    [ ] heal
+    [ ] special
+
+[ ] Lots more strings
 
 [ ] Change the yellow font colour
 
-[ ] Announcer wording improvements, more options and randomly select
-    missing apostrophe 's' in places
+
 
 [ ] Tweak character stat numbers
 

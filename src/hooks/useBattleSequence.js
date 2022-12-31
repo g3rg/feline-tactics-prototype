@@ -4,7 +4,9 @@ import {
     special,
     heal,
     attack,
-    defend
+    defend,
+    getRandomFromArray,
+    attackStrings, defendedStrings, damagedStrings, turnStrings, defendStrings, defendingStrings
 } from 'shared';
 import {useEffect, useState} from 'react';
 
@@ -37,7 +39,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
 
                     (async () => {
                         setInSequence(true);
-                        setAnnouncerMessage(`${attacker.name} has chosen to attack!`);
+                        setAnnouncerMessage(eval(getRandomFromArray(attackStrings)));
                         await wait(1000);
 
                         const origAnimation = turn === 0 ? playerOneAnimation : playerTwoAnimation
@@ -70,12 +72,10 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             : setPlayerOneAnimation('static');
 
                         const msg = turn === 0
-                            ? (playerTwoDefenseBonus > 1 ? ' defended well!' : "felt that!")
-                            : (playerOneDefenseBonus > 1 ? ' defended well!' : "felt that!")
+                            ? (playerTwoDefenseBonus > 1 ? defendedStrings : damagedStrings)
+                            : (playerOneDefenseBonus > 1 ? defendedStrings : damagedStrings)
 
-                        setAnnouncerMessage(
-                            `${receiver.name} ${msg}`,
-                        );
+                        setAnnouncerMessage(eval(getRandomFromArray(msg)));
 
                         turn === 0
                             ? setPlayerTwoHealth(h => (h - damage > 0 ? h - damage : 0))
@@ -83,7 +83,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         await wait(2000);
 
 
-                        setAnnouncerMessage(`Now it's ${receiver.name} turn!`);
+                        setAnnouncerMessage(eval(getRandomFromArray(turnStrings)));
                         await wait(1500);
 
                         setTurn(turn === 0 ? 1 : 0);
@@ -93,20 +93,19 @@ export const useBattleSequence = (sequence, player1, player2) => {
                     break;
                 }
 
-
                 case 'defend': {
                     defend({attacker});
 
                     (async () => {
                         setInSequence(true);
-                        setAnnouncerMessage(`${attacker.name} has chosen to defend!`);
+                        setAnnouncerMessage(eval(getRandomFromArray(defendStrings)));
                         await wait(1000);
 
                         turn === 0
                             ? setPlayerOneAnimation('defend')
                             : setPlayerTwoAnimation('defend');
 
-                        setAnnouncerMessage(`${attacker.name} is ready!`);
+                        setAnnouncerMessage(eval(getRandomFromArray(defendingStrings)));
                         turn === 0
                             ? setPlayerOneDefenseBonus(2)
                             : setPlayerTwoDefenseBonus(2)
@@ -116,8 +115,8 @@ export const useBattleSequence = (sequence, player1, player2) => {
                             : setPlayerTwoPower(limitToBetweenZeroAndMax(playerTwoPower + 25, player2.maxPower))
 
                         await wait(2500);
-
-                        setAnnouncerMessage(`Now it's ${receiver.name}'s turn!`);
+                        
+                        setAnnouncerMessage(eval(getRandomFromArray(turnStrings)));
                         await wait(1500);
 
                         setTurn(turn === 0 ? 1 : 0);
