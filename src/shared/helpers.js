@@ -51,6 +51,6 @@ export const special = ({attacker, receiver, receiverDefenseBonus = 1, attackerP
 
         return finalDamage;
     } else {
-        return 0;
+        return -1;
     }
 }

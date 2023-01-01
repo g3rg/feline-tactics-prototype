@@ -1,7 +1,5 @@
-[ ] Upgrade libs to try and fix hot reload error
-    [ ] react
-    [ ] react-scripts
-    [ ]
+[ ] Bug - sometimes bar is full but say's you can't super...
+
 [ ] Start Screen
 
 [ ] Tweak action logic
@@ -16,11 +14,6 @@
         [ ] Special action
 
     [ ] DEFENDING - power generation based on a stat?
-
-
-[ ] Change the yellow font colour
-
-[ ] Bug - sometimes bar is full but say's you can't super...
 
 [ ] Lots more strings
 
@@ -90,4 +83,10 @@ V3: Multiplayer!
 
 [x] Properly centre things
     [x] Just the controls for character selection to go?
+
+[x] Upgrade libs to try and fix hot reload error
+    [x] react
+    [x] react-scripts
+
+[x] Change the yellow font colour
 

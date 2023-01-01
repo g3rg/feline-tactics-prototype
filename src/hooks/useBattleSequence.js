@@ -184,7 +184,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         (async () => {
                             setInSequence(true);
                             setAnnouncerMessage(eval(getRandomFromArray(cantHealStrings)));
-                            await wait(1000);
+                            await wait(1500);
                             setTurn(turn === 0 ? 1 : 0)
                             setInSequence(false)
                         })();
@@ -194,10 +194,11 @@ export const useBattleSequence = (sequence, player1, player2) => {
                 }
 
                 case 'special': {
+
                     const attackerPower = turn === 0 ? playerOnePower : playerTwoPower
                     const damage = special({attacker, receiver, receiverDefenseBonus, attackerPower});
-                    const specialName = Object.keys(attacker.specials)[0]
-                    if (damage > 0) {
+
+                    if (damage >= 0) {
                         (async () => {
                             setInSequence(true);
                             setAnnouncerMessage(eval(getRandomFromArray(specialStrings)));
@@ -253,7 +254,7 @@ export const useBattleSequence = (sequence, player1, player2) => {
                         (async () => {
                             setInSequence(true);
                             setAnnouncerMessage(eval(getRandomFromArray(cantSpecialStrings)));
-                            await wait(1000);
+                            await wait(1500);
                             setTurn(turn === 0 ? 1 : 0)
                             setInSequence(false)
                         })();
